@@ -1,0 +1,12 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+
+# Flutter
+flutter_application_1/build/
+flutter_application_1/.dart_tool/
+
+# Archivos subidos
+bakend_API/uploads/
