@@ -1,6 +1,6 @@
 # 🌊 AquaTrack Blog
 
-Aplicación web/móvil para la gestión de blogs con temática de concientización sobre el agua. Cuenta con un sistema de usuarios, roles (Administrador y Usuario), gestión de publicaciones, comentarios y reportes.
+Aplicación móvil para la gestión de blogs con temática de concientización sobre el agua. Cuenta con un sistema de usuarios, roles (Administrador y Usuario), gestión de publicaciones, comentarios y reportes.
 
 ##  Tecnologías utilizadas
 * **Frontend:** Flutter (Dart)
