@@ -21,7 +21,7 @@ Aplicación móvil para la gestión de blogs con temática de concientización s
 
 ### 1. Configurar la Base de Datos
 1. Abre tu gestor de MySQL (XAMPP/phpMyAdmin o MySQL Workbench).
-2. Crea una base de datos vacía llamada `db_aplicacion_movil`.
+2. Utilizamos la base de datos creada durante el curso llamada `db_aplicacion_movil`.
 3. Importa el archivo `backend_API/database.sql` dentro de esa base de datos.
 
 ### 2. Configurar el Backend (FastAPI)
