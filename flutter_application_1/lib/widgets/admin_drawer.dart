@@ -11,7 +11,6 @@ class AdminDrawer extends StatelessWidget {
     required this.rutaActual,
   });
 
-  // 👇 DEFINIMOS LOS COLORES AQUÍ (A nivel de clase)
   static const colorOscuro = Color(0xFF1e81b0);
   static const colorClaro = Color(0xFFa8d5e2);
 
@@ -111,7 +110,6 @@ class AdminDrawer extends StatelessWidget {
           color: seleccionado ? colorOscuro : Colors.black87,
         ),
       ),
-      // 👇 Usamos el color claro de la clase
       tileColor: seleccionado ? colorClaro.withOpacity(0.3) : null,
       selected: seleccionado,
       onTap: () => _navegar(context, ruta),

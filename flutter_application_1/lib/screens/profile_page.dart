@@ -121,7 +121,6 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 
-  // 👇 DIÁLOGO PARA CAMBIAR CONTRASEÑA
   void _mostrarDialogoCambiarPassword() {
     final passController = TextEditingController();
     final confirmController = TextEditingController();
@@ -214,7 +213,7 @@ class _ProfilePageState extends State<ProfilePage> {
                               passController.text,
                             );
                             if (!mounted) return;
-                            Navigator.pop(context); // Cierra el diálogo
+                            Navigator.pop(context);
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
                                 content: Text(
@@ -415,7 +414,6 @@ class _ProfilePageState extends State<ProfilePage> {
 
                       const SizedBox(height: 16),
 
-                      // 👇 BOTÓN PARA CAMBIAR CONTRASEÑA
                       SizedBox(
                         height: 50,
                         child: OutlinedButton.icon(

@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   void initState() {
     super.initState();
-    // Forzamos a que los campos estén vacíos al iniciar
+
     usuarioController.clear();
     passwordController.clear();
   }
@@ -43,7 +43,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Future<void> iniciarSesion() async {
-    // Ocultamos el teclado para evitar bugs visuales en Web
     FocusScope.of(context).unfocus();
 
     final mensaje = authService.validarLogin(
@@ -127,7 +126,6 @@ class _LoginPageState extends State<LoginPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // 👇 Ícono cambiado a Gota de Agua y color AquaTrack
                   const Icon(
                     Icons.water_drop,
                     size: AppSizes.iconLarge,
@@ -139,7 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: colorOscuro, // 👈 Azul oscuro AquaTrack
+                      color: colorOscuro,
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -152,8 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                     keyboardType: TextInputType.emailAddress,
                     suffixIcon: IconButton(
                       icon: const Icon(Icons.clear, color: Colors.grey),
-                      onPressed: () => usuarioController
-                          .clear(), // Botón para limpiar a la fuerza
+                      onPressed: () => usuarioController.clear(),
                     ),
                   ),
                   const SizedBox(height: 20),
@@ -169,8 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                       children: [
                         IconButton(
                           icon: const Icon(Icons.clear, color: Colors.grey),
-                          onPressed: () => passwordController
-                              .clear(), // Botón para limpiar a la fuerza
+                          onPressed: () => passwordController.clear(),
                         ),
                         IconButton(
                           icon: Icon(
@@ -191,7 +187,6 @@ class _LoginPageState extends State<LoginPage> {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        // Navegamos a recuperar contraseña
                         Navigator.push(
                           context,
                           MaterialPageRoute(

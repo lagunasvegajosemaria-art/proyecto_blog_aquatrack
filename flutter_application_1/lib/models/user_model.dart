@@ -16,14 +16,12 @@ class UserModel {
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
-    // Buscamos el ID en todas las posibles llaves que pueda usar el backend
     final dynamic rawId =
         json['id_usr'] ??
         json['id'] ??
         json['id_usuario'] ??
         json['usuario_id'];
 
-    // Lo convertimos a entero de forma segura
     int idParseado = 0;
     if (rawId != null) {
       idParseado = rawId is int ? rawId : int.tryParse(rawId.toString()) ?? 0;

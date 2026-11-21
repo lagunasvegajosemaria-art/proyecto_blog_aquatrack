@@ -471,10 +471,10 @@ def eliminar_blog(blog_id: int, db: Session = Depends(obtener_sesion)):
     if not blog:
         raise HTTPException(status_code=404, detail="Blog no encontrado")
     
-    # 1. Borramos los comentarios asociados para que la llave foránea no marque error
+
     db.query(Comentario).filter(Comentario.blog_id == blog_id).delete()
     
-    # 2. Borramos el blog
+
     db.delete(blog)
     db.commit()
     return None

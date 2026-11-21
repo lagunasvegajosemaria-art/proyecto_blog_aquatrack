@@ -4,7 +4,7 @@ import '../models/post_model.dart';
 import '../models/comentario_model.dart';
 import '../services/comentario_service.dart';
 import '../services/user_service.dart';
-import '../services/post_service.dart'; // 👈 NUEVO IMPORT
+import '../services/post_service.dart';
 
 class PostDetailPage extends StatefulWidget {
   final PostModel post;
@@ -55,7 +55,6 @@ class _PostDetailPageState extends State<PostDetailPage> {
     super.dispose();
   }
 
-  // 👇 LÓGICA PARA ELIMINAR EL POST
   Future<void> _eliminarPost() async {
     final confirm = await showDialog<bool>(
       context: context,
@@ -92,7 +91,7 @@ class _PostDetailPageState extends State<PostDetailPage> {
           backgroundColor: Colors.green,
         ),
       );
-      Navigator.pop(context); // Regresa a la lista de blogs
+      Navigator.pop(context);
     } catch (e) {
       if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
@@ -219,7 +218,6 @@ class _PostDetailPageState extends State<PostDetailPage> {
       inicialUsuario = nombreUsuario[0].toUpperCase();
     }
 
-    // 👇 VERIFICAMOS SI ES ADMIN O AUTOR DEL POST
     final esAdmin = (widget.usuario['tip_usu'] as num?)?.toInt() == 1;
     final esAutor = widget.post.autor == nombreUsuario;
     final puedeEliminar = esAdmin || esAutor;

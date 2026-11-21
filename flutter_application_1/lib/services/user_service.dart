@@ -45,7 +45,6 @@ class UserService {
   }
 
   Future<bool> actualizarUsuario(UserModel usuario) async {
-    // VALIDACIÓN CRÍTICA: Si el ID es 0, no hacemos la petición para evitar el 404
     if (usuario.id <= 0) {
       throw Exception(
         'El ID del usuario es inválido (0). No se puede actualizar.',
@@ -134,9 +133,8 @@ class UserService {
     final data = jsonDecode(respuesta.body);
 
     if (respuesta.statusCode == 200) {
-      return data['password_temporal']; // Retorna la nueva contraseña
+      return data['password_temporal'];
     } else {
-      // Si el backend da error (ej. usuario no encontrado)
       throw Exception(data['detail'] ?? 'Error al recuperar la contraseña');
     }
   }

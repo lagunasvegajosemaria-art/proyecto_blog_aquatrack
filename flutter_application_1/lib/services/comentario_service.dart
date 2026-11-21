@@ -7,7 +7,6 @@ import '../models/comentario_model.dart';
 class ComentarioService {
   static const String baseUrl = 'http://127.0.0.1:8000';
 
-  // 1. Obtener TODOS los comentarios (usado en el detalle del post)
   Future<List<ComentarioModel>> obtenerComentarios() async {
     final respuesta = await http
         .get(Uri.parse('$baseUrl/comentarios'))
@@ -22,7 +21,6 @@ class ComentarioService {
     throw Exception('Error al cargar comentarios');
   }
 
-  // 2. Enviar un nuevo comentario
   Future<void> agregarComentario(ComentarioModel comentario) async {
     final respuesta = await http
         .post(
@@ -40,7 +38,6 @@ class ComentarioService {
     }
   }
 
-  // 4. Obtener solo los reportados (usado en el panel de admin)
   Future<List<ComentarioModel>> obtenerReportados() async {
     final respuesta = await http
         .get(Uri.parse('$baseUrl/comentarios/reportados'))
@@ -55,7 +52,6 @@ class ComentarioService {
     throw Exception('Error al cargar reportes');
   }
 
-  // 5. Aprobar un comentario reportado (admin)
   Future<void> aprobarComentario(int id) async {
     final respuesta = await http.put(
       Uri.parse('$baseUrl/comentarios/$id/aprobar'),
@@ -71,12 +67,10 @@ class ComentarioService {
     );
 
     if (respuesta.statusCode != 200) {
-      // Si falla, lanzamos el código de error y el mensaje del backend
       throw Exception('HTTP ${respuesta.statusCode} - ${respuesta.body}');
     }
   }
 
-  // 6. Eliminar un comentario definitivamente (admin)
   Future<void> eliminarComentario(int id) async {
     final respuesta = await http.delete(Uri.parse('$baseUrl/comentarios/$id'));
     if (respuesta.statusCode != 204 && respuesta.statusCode != 200) {

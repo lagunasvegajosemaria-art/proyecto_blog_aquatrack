@@ -11,7 +11,6 @@ class UserDrawer extends StatelessWidget {
     required this.rutaActual,
   });
 
-  // 👇 DEFINIMOS LOS COLORES AQUÍ
   static const colorOscuro = Color(0xFF1e81b0);
   static const colorClaro = Color(0xFFa8d5e2);
 

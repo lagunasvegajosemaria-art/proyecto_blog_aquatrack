@@ -47,7 +47,6 @@ class _BlogPageState extends State<BlogPage> {
     if (argumento is Map<String, dynamic> && argumento.isNotEmpty) {
       usuarioActual = Map<String, dynamic>.from(argumento);
     } else {
-      // Si recargamos la página, obtenemos los datos de SharedPreferences
       final prefs = await SharedPreferences.getInstance();
       usuarioActual = {
         'id': prefs.getInt('id_usr') ?? 0,

@@ -21,7 +21,6 @@ class _RegisterPageState extends State<RegisterPage> {
 
   final AuthService authService = AuthService();
 
-  // Paleta AquaTrack
   static const colorOscuro = Color(0xFF1e81b0);
 
   @override
@@ -98,7 +97,6 @@ class _RegisterPageState extends State<RegisterPage> {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  // 👇 Ícono con color AquaTrack
                   const Icon(
                     Icons.person_add_alt_1,
                     size: AppSizes.iconLarge,
@@ -111,7 +109,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       fontSize: 26,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 1.2,
-                      color: colorOscuro, // 👈 Azul oscuro AquaTrack
+                      color: colorOscuro,
                     ),
                   ),
                   const SizedBox(height: 32),
@@ -151,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: const Text(
                       'Ya tengo una cuenta',
                       style: TextStyle(
-                        color: colorOscuro, // 👈 Texto en azul AquaTrack
+                        color: colorOscuro,
                         fontWeight: FontWeight.bold,
                       ),
                     ),

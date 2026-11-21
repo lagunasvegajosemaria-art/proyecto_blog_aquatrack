@@ -35,9 +35,9 @@ class PostService {
             'Accept': 'application/json',
           },
           body: jsonEncode({
-            'id_blog': 0, // O el valor que requiera tu backend si es autoincrementable o requerido
+            'id_blog': 0,
             'titulo': titulo.trim(),
-            'desc': descripcion.trim(), // Cambiado de 'descripcion' a 'desc'
+            'desc': descripcion.trim(),
             'img': (imagen ?? '').trim().isEmpty ? null : imagen!.trim(),
             'tags': (tags ?? '').trim().isEmpty ? null : tags!.trim(),
             'usuario_id': usuarioId,
